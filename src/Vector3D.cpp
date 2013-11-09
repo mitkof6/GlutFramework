@@ -41,12 +41,9 @@ Vector3D Vector3D::operator *(float c){
 }
 
 
-void Vector3D::normalize(){
+Vector3D Vector3D::normalize(){
 	float d = x*x+y*y+z*z;
-	x = x/d;
-	y = y/d;
-	z = z/d;
-
+	return Vector3D(x/d, y/d, z/d);
 }
 
 void Vector3D::toString(){

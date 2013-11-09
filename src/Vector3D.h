@@ -21,7 +21,7 @@ public:
 	Vector3D operator -(Vector3D other);
 	Vector3D operator *(float c);
 
-	void normalize();
+	Vector3D normalize();
 
 	void toString();
 

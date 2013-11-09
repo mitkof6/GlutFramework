@@ -26,8 +26,9 @@ void Camera::draw(){
 }
 
 void Camera::move(float speed){
+	
 	Vector3D dir = view-pos;
-	dir.normalize();
+	dir = dir.normalize();
 
 	dir = dir*speed;
 	dir.y = 0;
@@ -37,12 +38,14 @@ void Camera::move(float speed){
 }
 
 void Camera::rotateX(float speed){
+
 	Vector3D dir = view - pos;
+	dir = dir.normalize();
 
 	view.x = dir.x;
 	view.y = (float)(cos(speed)*dir.y + -sin(speed)*dir.z);
 	view.z = (float)(sin(speed)*dir.y + sin(speed)*dir.z);
-
+	
 }
 
 void Camera::rotateY(float speed){
@@ -52,12 +55,12 @@ void Camera::rotateY(float speed){
 	view.x = (float)(cos(speed)*dir.x + sin(speed)*dir.z);
 	view.y = dir.y;
 	view.z = (float)(-sin(speed)*dir.x + cos(speed)*dir.z);
-	//view.normalize();
+
 }
 
 void Camera::strafe(float speed){
 	Vector3D dir = view - pos;
-	dir.normalize();
+	dir = dir.normalize();
 
 	Vector3D ortho;
 

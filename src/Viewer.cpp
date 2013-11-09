@@ -44,7 +44,11 @@ Viewer::Viewer(int argc, char** argv) {
 	glutPassiveMotionFunc(setMouseMoveFunction);
 }
 
-Viewer::~Viewer() {}
+Viewer::~Viewer() {
+	for(unsigned i = 0;i<drawable.size();i++){
+		delete drawable.at(i);
+	}
+}
 
 void Viewer::addToDraw(Renderable *r){
 	drawable.push_back(r);
@@ -148,7 +152,7 @@ void Viewer::mouseMove(int x, int y){
 		
 		camera.rotateY(-difX*CAMERA_ROTATE_SPEED);
 
-		glutWarpPointer(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
+		//glutWarpPointer(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
 
 		just_warped = true;
 		
