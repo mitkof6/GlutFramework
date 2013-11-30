@@ -23,7 +23,7 @@ using namespace std;
 #define WINDOW_Y_POS 100
 
 #define CAMERA_MOVE_SPEED 10
-#define CAMERA_ROTATE_SPEED 0.03
+#define CAMERA_ROTATE_SPEED 0.01
 #define CAM_POS_X 10
 #define CAM_POS_Y 10
 #define CAM_POS_Z 20

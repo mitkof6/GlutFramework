@@ -147,12 +147,13 @@ void Viewer::mouseMove(int x, int y){
 		int difX = x-WINDOW_WIDTH/2;
 		int difY = y-WINDOW_HEIGHT/2;
 
+		if(abs(difX)>abs(difY)){
+			camera.rotateY(-difX*CAMERA_ROTATE_SPEED);
+		}else{
+			camera.rotateX(-difY*CAMERA_ROTATE_SPEED);
+		}
 		
-		//camera.rotateX(difX*0.06);
-		
-		camera.rotateY(-difX*CAMERA_ROTATE_SPEED);
-
-		//glutWarpPointer(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
+		glutWarpPointer(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
 
 		just_warped = true;
 		

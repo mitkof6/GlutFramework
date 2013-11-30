@@ -24,6 +24,7 @@ public:
 	void strafe(float speed);
 
 	void draw();
+	void update(){};
 
 };
 
